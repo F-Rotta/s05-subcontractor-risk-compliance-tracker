@@ -1,26 +1,26 @@
 [
   {
-    "name": "Audit Rapido (Single Pass)",
+    "name": "Audit Singolo",
     "amount": 2900,
     "recurring": null,
     "key_suffix": "SINGLE_PASS",
     "credits": 5,
-    "rationale": "Low-commitment entry point for independent lawyers handling occasional subcontractor compliance checks."
+    "rationale": "Ideal for law firms handling occasional subcontracting audits or urgent single-case compliance checks."
   },
   {
-    "name": "Studio Legale (Standard Pass)",
+    "name": "Pacchetto Studio Legale",
     "amount": 7900,
     "recurring": null,
     "key_suffix": "STANDARD_PASS",
     "credits": 20,
-    "rationale": "Balanced mid-tier bundle optimized for notarized firms with regular contract audit workflows, capturing the highest volume."
+    "rationale": "Designed for boutique firms with a steady stream of supplier contracts and ongoing deadline monitoring needs."
   },
   {
-    "name": "Enterprise & Notary Power (Heavy Pass)",
-    "amount": 14900,
+    "name": "Pacchetto Notarile & Enterprise",
+    "amount": 19900,
     "recurring": null,
-    "key_suffix": "HEAVY_PASS",
-    "credits": 50,
-    "rationale": "High-capacity tier targeting large notary and law practices managing heavy volumes of joint-liability subcontracting agreements."
+    "key_suffix": "POWER_PASS",
+    "credits": 60,
+    "rationale": "High-volume credit tier optimized for large notary offices and legal practices managing extensive contractor networks."
   }
 ]

@@ -1,44 +1,44 @@
-# Pricing Strategy & Monetization Blueprint: Subcontractor Risk Compliance Tracker
+# Pricing & Monetization Strategy: Subcontractor Risk Compliance Tracker
 
 ## Executive Summary
-This document outlines the pricing architecture for the **Subcontractor Risk Compliance Tracker**, a micro-SaaS (Spoke) tailored for Italian law firms (*Studi Legali*) and notaries (*Notai*) struggling with real-time tracking of legal deadlines and joint liability (*responsabilità in solido*) in subcontracting agreements.
+This document outlines the psychology-anchored, pay-per-use credit model for the **Subcontractor Risk Compliance Tracker**, tailored specifically for Italian law firms (*Studi Legali*) and notaries (*Notai*). 
 
-To align with user behavior in the legal vertical—where software is often evaluated per project or per compliance audit rather than as an ongoing monthly subscription—we utilize a **Stripe Credit / Pay-Per-Use model** using non-recurring credit passes.
+Targeting the high-value legal compliance market—where missing a legal deadline or failing joint-liability (*responsabilità in solido*) checks carries severe financial and professional risks—this micro-SaaS uses a Stripe-powered credit system rather than standard monthly subscriptions. This aligns directly with how legal professionals bill and consume specialized technological resources: per practice, per audit, or per client dossier.
 
 ---
 
-## Psychological Pricing & Tier Architecture
+## Target Audience & Tier Breakdown
 
-Given the high stakes of legal non-compliance and joint liability in Italy (where penalties far outweigh software costs), pricing is anchored on risk mitigation and time saved. All prices are in EUR cents and leverage psychological thresholds ending in **9**.
+### 1. Audit Singolo (Single Pass)
+- **Price:** 29.00 EUR (2900 cents)
+- **Credits:** 5 Audit Credits
+- **Target Persona:** Solo practitioners or small law firms handling occasional subappalto compliance checks.
+- **Psychological Rationale:** Low-friction entry barrier. At 29 EUR, the purchase decision requires no bureaucratic sign-off or partner meeting. It acts as an impulse buy for an immediate pain point (e.g., verifying a sudden contract deadline).
 
-1. **Audit Rapido (Single Pass) - 29.00 EUR (2900 cents)**
-   * **Credits:** 5 Audits/Runs
-   * **Target Persona:** Solo practitioners or small law firms handling occasional subcontractor verifications.
-   * **Psychological Rationale:** Low-friction barrier to entry. Priced below the cost of a single billable hour, making it an impulse purchase for an urgent compliance check.
+### 2. Pacchetto Studio Legale (Standard Pass)
+- **Price:** 79.00 EUR (7900 cents)
+- **Credits:** 20 Audit Credits (Best Value Anchor)
+- **Target Persona:** Boutique law firms with multiple active civil/commercial lawyers managing regular subcontractor portfolios.
+- **Psychological Rationale:** This serves as the **decoy/anchor tier**. By pricing 20 credits at 79 EUR (effectively ~3.95 EUR per credit vs. 5.80 EUR on the starter tier), the user perceives massive savings. It captures the vast majority of mid-market legal studios seeking predictable per-case budgeting without monthly commitment.
 
-2. **Studio Legale (Standard Pass) - 79.00 EUR (7900 cents)**
-   * **Credits:** 20 Audits/Runs
-   * **Target Persona:** Established boutique law firms and notary offices with a steady flow of corporate clients and supply-chain contracts.
-   * **Psychological Rationale:** The designated "Anchor / Best Value" tier. It offers a lower cost-per-audit than the Single Pass, incentivizing mid-tier commitment without triggering budget approval committees.
-
-3. **Enterprise & Notary Power (Heavy Pass) - 149.00 EUR (14900 cents)**
-   * **Credits:** 50 Audits/Runs
-   * **Target Persona:** Large multi-partner law firms or corporate legal departments managing extensive subcontractor portfolios.
-   * **Psychological Rationale:** Premium tier signaling enterprise-grade reliability and high-volume capacity.
+### 3. Pacchetto Notarile & Enterprise (Power Pass)
+- **Price:** 199.00 EUR (19900 cents)
+- **Credits:** 60 Audit Credits
+- **Target Persona:** Established notary offices and mid-to-large legal practices managing high-frequency corporate restructuring, large construction subcontracts, and continuous joint-liability tracking.
+- **Psychological Rationale:** Positioned for high-volume power users. It satisfies procurement requirements for bulk discounts while locking in higher upfront cash flow per transaction.
 
 ---
 
 ## Path to Target MRR ($1250 - $2000 / ~1150 EUR - 1850 EUR)
 
-Because this model relies on **one-time credit purchases (Pay-per-use)** rather than monthly recurring subscriptions, "Target MRR" translates to **Target Monthly Gross Volume (GMV)** derived from credit top-ups and repeat purchases.
+Because this asset utilizes a **Pay-Per-Use Credit Model** (Stripe One-Time Payments), "MRR" is calculated as a *run-rate* based on average monthly credit consumption and repeat purchases. Assuming an average client re-loads credits or new clients enter the funnel monthly:
 
-Assuming an average customer value centered around the **Standard Pass (79.00 EUR)**:
-* **Target Revenue Goal:** ~1,500.00 EUR/month.
-* **Required Transactions per Month:** 
-  * If relying entirely on the *Standard Pass (79.00 EUR)*: **~19 transactions/month**.
-  * If blended across tiers (e.g., 5 Single Passes + 10 Standard Passes + 3 Heavy Passes): 
-    * (5 × 29.00) + (10 × 79.00) + (3 × 14900/100) = 145 + 790 + 447 = **1,382.00 EUR**.
+- **Average Order Value (AOV) Blend:** Estimated at ~95 EUR per transaction (weighted heavily toward the *Pacchetto Studio Legale*).
+- **Target Monthly Transactions:** To hit the target range of **1,250 EUR to 2,000 EUR MRR equivalent**, the platform requires:
+  - **~14 to 21 transactions per month** across the three tiers.
+  - *Example mix:* 4 Single Passes (116 EUR) + 10 Standard Passes (790 EUR) + 4 Power Passes (796 EUR) = **1,702 EUR/month**.
 
-### Go-To-Market & Conversion Levers
-* **Credit Expiration & Alerts:** Trigger automated Stripe/email reminders when a firm drops below 2 credits, encouraging seamless replenishment.
-* **Risk Framing:** Position the cost of a 79.00 EUR pass against thousands of euros in potential joint-liability fines to dramatically accelerate conversion rates.
+### Conversion & Retention Playbook
+1. **Low-Risk Trial:** Allow new signups 1 free audit credit to experience the real-time deadline monitoring and risk alert engine.
+2. **Automated Replenishment Nudges:** Trigger automated Stripe billing emails when a firm drops below 2 remaining credits, highlighting their exposure to *responsabilità in solido* risks if monitoring stops.
+3. **B2B Trust Signals:** Display Italian compliance standard references directly in the checkout flow to eliminate legal sector hesitation.
