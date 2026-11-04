@@ -4,6 +4,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ShieldAlert, Users, FileText, CheckSquare, Settings } from 'lucide-react';
+import "../globals.css";
 
 export default async function LocaleLayout({
   children,

@@ -1,44 +1,43 @@
-# Executive Summary: Pricing & Monetization Strategy
+# Pricing Strategy & Monetization Blueprint: Subcontractor Risk Compliance Tracker
 
-## Asset Overview
-- **Entity Type:** Spoke (Micro-SaaS)
-- **Name:** Subcontractor Risk Compliance Tracker
-- **Market Niche:** Studi Legali e Notai (Automazione audit e conformità per subappalti)
-- **Core Problem Addressed:** Mancanza di monitoraggio in tempo reale delle scadenze legali e mitigazione dei rischi di responsabilità in solido nei contratti di subappalto.
-- **Target MRR Equivalent:** $1250 - $2000 (circa 1.150€ - 1.850€)
+## Executive Summary
+This document outlines the pricing architecture for the **Subcontractor Risk Compliance Tracker**, a micro-SaaS Spoke targeting *Studi Legali e Notai* (Law firms and Notaries) in Italy. The core problem addressed is the inability to monitor real-time legal deadlines and joint-and-several liability (*responsabilità in solido*) in complex subcontractor agreements (*subappalto*).
+
+Given the high-stakes, risk-averse nature of the legal sector, a credit-based, pay-per-use model via Stripe is deployed to lower initial adoption friction while capturing high-margin value during heavy audit cycles.
 
 ---
 
-## Strategic Rationale: Why Pay-per-Use / Stripe Credits?
-Il settore legale e notarile opera storicamente su base di parcella, consulenza mirata o "pratica per pratica". Imporre un abbonamento mensile fisso (SaaS tradizionale) a uno studio legale di medie dimensioni genera spesso frizione iniziale e cicli di approvazione lunghi. 
-
-Adottare un modello a **Crediti Stripe / Pay-per-Use** trasforma il software in un *costo variabile direttamente imputabile alla pratica del cliente* (es. audit di conformità del subappaltatore ribaltato sul committente o sul subappaltatore stesso). La psicologia d'acquisto si sposta da "un altro abbonamento da giustificare" a "un investimento puntuale per azzerare un rischio legale catastrofico".
-
----
-
-## Pricing Tiers Breakdown (Psychological Anchoring)
-
-1. **Audit Singolo Pass (29,00 EUR - 5 Crediti)**
-   - **Target:** Studi legali individuali o notai con volumi ridotti di subappalti.
-   - **Psicologia:** Soglia d'impulso inferiore a 30€. Funziona come *low-friction entry barrier*, permettendo all'avvocato di testare l'efficacia del tracciamento del rischio in solido su una pratica specifica senza impegno ricorrente.
-
-2. **Pacchetto Conformità Standard (69,00 EUR - 15 Crediti)**
-   - **Target:** Studi associati e studi notarili strutturati.
-   - **Psicologia:** Rappresenta il *sweet spot* e il "decoy" di valore. Con un costo per credito più vantaggioso rispetto al pass singolo, cattura la maggioranza delle transazioni ricorrenti spot. Il prezzo termina in 9 (soglia psicologica consolidata nel B2B).
-
-3. **Power Audit Pass (129,00 EUR - 35 Crediti)**
-   - **Target:** Studi legali d'affari, dipartimenti legali corporate o notarili con un alto portafoglio cantieri/subappalti.
-   - **Psicologia:** Offerta ad alto rendimento per utenti intensivi. Il risparmio per singolo credito è evidente, spingendo i power-user a pre-acquistare volume riducendo l'abbandono e garantendo cassa immediata.
+## Target MRR & Financial Modeling
+- **Target MRR / Equivalent Monthly Run Rate:** $1,250 – $2,000 (Converted to EUR: ~1,200 EUR – 1,900 EUR).
+- **Average Revenue Per User (ARPU) Assumption:** 79.00 EUR (Standard Pass).
+- **Unit Economics to Hit Target:** 
+  - To achieve ~1,500 EUR/month equivalent run-rate, the asset requires approximately **19 Standard Passes** or a healthy mix of Single and Power passes purchased monthly by recurring users.
 
 ---
 
-## Path to Target MRR (1.250€ - 2.000€)
-Poiché il modello è basato su crediti one-time (non ricorrenti), l'equivalente MRR viene calcolato stimando il consumo e il tasso di riacquisto mensile (*re-order rate*) della base clienti attiva:
+## Tier Architecture & Psychological Anchoring
 
-- **Ticket Medio Ponderato per Transazione:** ~75,00 EUR
-- **Fatturato Obiettivo Mensile:** 1.500 EUR (al centro del target)
-- **Transazioni Mensili Richieste:** 20 pacchetti venduti al mese (una combinazione di Standard e Power Pass).
+### 1. Audit Singolo Pass (`SINGLE`)
+- **Price:** 29.00 EUR (`2900` cents)
+- **Credits:** 5 Audit Credits
+- **Target Persona:** Solo practitioners (*avvocati monoprofessionali*) needing on-demand verification for occasional subappalto files.
+- **Psychological Rationale:** Positioned below the psychological 30.00 EUR threshold, representing less than the cost of a single billable hour. It acts as a low-risk trial mechanism without requiring a subscription commitment.
 
-### Strategia di Conversione:
-- **Auto-rifornimento (Stripe Billing):** Opzione di ricarica automatica dei crediti quando il saldo scende sotto a 2 crediti, convertendo gradualmente gli utenti occasionali in una base di ricavi prevedibili simili a un abbonamento.
-- **Upsell post-audit:** Ogni volta che un audit rileva un rischio critico di responsabilità in solido, il sistema suggerisce l'acquisto del pacchetto superiore per sbloccare monitoraggi illimitati sulla filiera.
+### 2. Studio Legale Standard Pass (`STANDARD`)
+- **Price:** 79.00 EUR (`7900` cents)
+- **Credits:** 20 Audit Credits
+- **Target Persona:** Boutique law firms and notary offices (*studi associati*) with steady corporate and construction law caseloads.
+- **Psychological Rationale:** The core anchor tier. At 79.00 EUR, it leverages the charm pricing of ending in 9 while offering a significantly lower cost-per-audit than the single pass (approx. 3.95 EUR per credit vs. 5.80 EUR). This will be the primary conversion target.
+
+### 3. Notariato & Agency Power Pass (`POWER`)
+- **Price:** 149.00 EUR (`14900` cents)
+- **Credits:** 50 Audit Credits
+- **Target Persona:** Larger legal practices, civil law notaries handling heavy real estate/public works portfolios, and enterprise legal departments.
+- **Psychological Rationale:** Anchored just under 150.00 EUR, this tier targets power users seeking maximum cost efficiency (approx. 2.98 EUR per credit). It frames the lower tiers as economical while capturing maximum willingness-to-pay from high-volume corporate practices.
+
+---
+
+## Path to Target MRR Execution
+1. **Frictionless Onboarding:** Lawyers buy credits instantly via Stripe with zero subscription anxiety.
+2. **Usage Alerts:** Automated notifications trigger when credits fall below 20%, prompting re-ups.
+3. **Retention Loop:** Compliance deadlines repeat quarterly/annually, naturally driving repeat credit purchases that stabilize monthly cash flow into the targeted 1,250 - 2,000 EUR bracket.
