@@ -1,46 +1,44 @@
-# Executive Summary: Pricing & Monetization Strategy
+# Pricing Strategy & Monetization Blueprint: Subcontractor Risk Compliance Tracker
 
-## Asset Overview
-- **Entity Type**: SPOKE (Micro-SaaS)
-- **Name**: Subcontractor Risk Compliance Tracker
-- **Market Niche**: Studi Legali e Notai (Automazione audit e conformità per subappalti)
-- **Core Value Proposition**: Mitigazione del rischio da responsabilità in solido e monitoraggio in tempo reale delle scadenze legali nei contratti di subappalto.
-- **Target MRR Equivalent**: $1250 - $2000 (convertito in EUR: ~1150€ - 1850€)
-- **Monetization Model**: Stripe Credits / Pay-per-Use (One-time credit packs, `recurring = null`)
+## Executive Summary
+This document outlines the pricing architecture for the **Subcontractor Risk Compliance Tracker**, a micro-SaaS (Spoke) tailored for Italian law firms (*Studi Legali*) and notaries (*Notai*) struggling with real-time tracking of legal deadlines and joint liability (*responsabilità in solido*) in subcontracting agreements.
+
+To align with user behavior in the legal vertical—where software is often evaluated per project or per compliance audit rather than as an ongoing monthly subscription—we utilize a **Stripe Credit / Pay-Per-Use model** using non-recurring credit passes.
 
 ---
 
-## Psychological Pricing & Anchoring Rationale
+## Psychological Pricing & Tier Architecture
 
-Per il target di riferimento (*Studi Legali e Notai*), il valore percepito del tempo risparmiato e del rischio evitato (sanzioni, contenziosi sulla responsabilità in solido) è estremamente alto. Tuttavia, trattandosi di un'applicazione Micro-SaaS di tipo "Spoke" focalizzata su un'esigenza specifica, il modello a consumo (*pay-per-use*) elimina le barriere d'ingresso tipiche degli abbonamenti ricorrenti non utilizzati.
+Given the high stakes of legal non-compliance and joint liability in Italy (where penalties far outweigh software costs), pricing is anchored on risk mitigation and time saved. All prices are in EUR cents and leverage psychological thresholds ending in **9**.
 
-Le soglie psicologiche sono state calibrate terminando con il finale **9** (`2900`, `6900`, `14900`) per massimizzare la percezione di convenienza pur mantenendo un posizionamento professionale B2B (alta marginalità).
+1. **Audit Rapido (Single Pass) - 29.00 EUR (2900 cents)**
+   * **Credits:** 5 Audits/Runs
+   * **Target Persona:** Solo practitioners or small law firms handling occasional subcontractor verifications.
+   * **Psychological Rationale:** Low-friction barrier to entry. Priced below the cost of a single billable hour, making it an impulse purchase for an urgent compliance check.
 
-### Tiers definiti:
-1. **Audit Singolo Pass (29,00 € - 5 Crediti)**: 
-   - *Target*: Studi individuali o professionisti occasionali.
-   - *Psicologia*: Prezzo d'impulso inferiore a una singola ora di consulenza legale, elimina qualsiasi attrito d'acquisto.
-2. **Compliance Pacchetto Standard (69,00 € - 15 Crediti)**: 
-   - *Target*: Studi associati di medie dimensioni.
-   - *Psicologia*: Rappresenta il "prezzo civetta" o ancora di valore, offrendo un costo per credito inferiore rispetto al pacchetto singolo e posizionandosi come la scelta più logica (*decoy effect*).
-3. **Enterprise Audit Pass (149,00 € - 40 Crediti)**: 
-   - *Target*: Grandi studi notarili o dipartimenti legali strutturati.
-   - *Psicologia*: Offerta ad alto volume per clienti con budget corporate che necessitano di monitoraggio continuativo senza vincoli di abbonamento mensile.
+2. **Studio Legale (Standard Pass) - 79.00 EUR (7900 cents)**
+   * **Credits:** 20 Audits/Runs
+   * **Target Persona:** Established boutique law firms and notary offices with a steady flow of corporate clients and supply-chain contracts.
+   * **Psychological Rationale:** The designated "Anchor / Best Value" tier. It offers a lower cost-per-audit than the Single Pass, incentivizing mid-tier commitment without triggering budget approval committees.
+
+3. **Enterprise & Notary Power (Heavy Pass) - 149.00 EUR (14900 cents)**
+   * **Credits:** 50 Audits/Runs
+   * **Target Persona:** Large multi-partner law firms or corporate legal departments managing extensive subcontractor portfolios.
+   * **Psychological Rationale:** Premium tier signaling enterprise-grade reliability and high-volume capacity.
 
 ---
 
-## Path to Target MRR ($1250 - $2000 / ~1150€ - 1850€)
+## Path to Target MRR ($1250 - $2000 / ~1150 EUR - 1850 EUR)
 
-Poiché il modello è basato su crediti prepagati (*one-time*), il calcolo del "Target MRR" si traduce nel volume equivalente di vendite mensili di pacchetti necessario per raggiungere stabilmente il fatturato target (assumendo una ripetitività d'acquisto stimata).
+Because this model relies on **one-time credit purchases (Pay-per-use)** rather than monthly recurring subscriptions, "Target MRR" translates to **Target Monthly Gross Volume (GMV)** derived from credit top-ups and repeat purchases.
 
-### Ipotesi di Mix di Vendita Mensile:
-- **Pacchetto Singolo (29 €)**: ~15 transazioni/mese = 435 €
-- **Pacchetto Standard (69 €)**: ~12 transazioni/mese = 828 €
-- **Enterprise Pass (149 €)**: ~4 transazioni/mese = 596 €
+Assuming an average customer value centered around the **Standard Pass (79.00 EUR)**:
+* **Target Revenue Goal:** ~1,500.00 EUR/month.
+* **Required Transactions per Month:** 
+  * If relying entirely on the *Standard Pass (79.00 EUR)*: **~19 transactions/month**.
+  * If blended across tiers (e.g., 5 Single Passes + 10 Standard Passes + 3 Heavy Passes): 
+    * (5 × 29.00) + (10 × 79.00) + (3 × 14900/100) = 145 + 790 + 447 = **1,382.00 EUR**.
 
-**Totale Fatturato Mensile Stimato**: **1.859 €** (perfettamente in linea con il target superiore di 2.000 $).
-
-### Strategia di Conversione e Retention:
-1. **Low Friction**: Primo audit di prova gratuito o a bassissimo costo per dimostrare immediatamente il valore sulla conformità dei subappalti.
-2. **Automated Reminders**: Notifiche automatiche via email quando i crediti stanno per esaurirsi o quando un contratto monitorato richiede un nuovo audit periodico.
-3. **Upsell**: Invito all'upgrade verso i pacchetti superiori basato sul volume effettivo di scadenze legali gestite dallo studio.
+### Go-To-Market & Conversion Levers
+* **Credit Expiration & Alerts:** Trigger automated Stripe/email reminders when a firm drops below 2 credits, encouraging seamless replenishment.
+* **Risk Framing:** Position the cost of a 79.00 EUR pass against thousands of euros in potential joint-liability fines to dramatically accelerate conversion rates.
