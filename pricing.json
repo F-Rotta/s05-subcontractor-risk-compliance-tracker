@@ -3,24 +3,24 @@
     "name": "Audit Singolo Pass",
     "amount": 2900,
     "recurring": null,
-    "key_suffix": "SINGLE",
+    "key_suffix": "SINGLE_PASS",
     "credits": 5,
-    "rationale": "Entry-level tier for individual lawyers or notaries needing quick compliance checks on a single subcontractor contract."
+    "rationale": "Ingresso a basso attrito per studi legali e notarili che necessitano di verifiche spot per singoli contratti di subappalto."
   },
   {
-    "name": "Studio Legale Standard Pass",
+    "name": "Compliance Standard Pack",
     "amount": 7900,
     "recurring": null,
-    "key_suffix": "STANDARD",
+    "key_suffix": "STANDARD_PASS",
     "credits": 20,
-    "rationale": "Mid-tier volume pack designed for boutique law firms managing multiple concurrent subappalto compliance audits."
+    "rationale": "Il pacchetto bilanciato scelto dalla maggioranza degli studi per gestire i carichi di lavoro ricorrenti e il monitoraggio delle scadenze."
   },
   {
-    "name": "Notariato & Agency Power Pass",
+    "name": "Studio Legale Power Pass",
     "amount": 14900,
     "recurring": null,
-    "key_suffix": "POWER",
+    "key_suffix": "POWER_PASS",
     "credits": 50,
-    "rationale": "High-volume credit bundle tailored for large notarized practices and legal networks requiring extensive risk monitoring."
+    "rationale": "Soluzione ad alto volume per studi strutturati con elevata rotazione di contratti e audit di conformità complessi."
   }
 ]
