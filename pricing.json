@@ -5,22 +5,22 @@
     "recurring": null,
     "key_suffix": "SINGLE_PASS",
     "credits": 5,
-    "rationale": "Ingresso a basso attrito per studi legali e notarili che necessitano di verifiche spot per singoli contratti di subappalto."
+    "rationale": "Ideale per piccoli studi legali o notarili con necessità sporadiche di verifica conformità subappalti."
   },
   {
-    "name": "Compliance Standard Pack",
-    "amount": 7900,
+    "name": "Compliance Pacchetto Standard",
+    "amount": 6900,
     "recurring": null,
     "key_suffix": "STANDARD_PASS",
-    "credits": 20,
-    "rationale": "Il pacchetto bilanciato scelto dalla maggioranza degli studi per gestire i carichi di lavoro ricorrenti e il monitoraggio delle scadenze."
+    "credits": 15,
+    "rationale": "Il best-seller per studi strutturati che gestiscono regolarmente posizioni di responsabilità in solido."
   },
   {
-    "name": "Studio Legale Power Pass",
+    "name": "Enterprise Audit Pass",
     "amount": 14900,
     "recurring": null,
     "key_suffix": "POWER_PASS",
-    "credits": 50,
-    "rationale": "Soluzione ad alto volume per studi strutturati con elevata rotazione di contratti e audit di conformità complessi."
+    "credits": 40,
+    "rationale": "Volume elevato per notarile e studi legali d'affari con alto flusso di contratti di subappalto da monitorare."
   }
 ]

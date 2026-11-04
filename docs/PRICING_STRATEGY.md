@@ -1,31 +1,46 @@
-# Executive Summary: Monetization Strategy for Subcontractor Risk Compliance Tracker
+# Executive Summary: Pricing & Monetization Strategy
 
-## 1. Context & Market Dynamics
-The **Subcontractor Risk Compliance Tracker** targets *Studi Legali e Notai* (law firms and notaries) in Italy, addressing a critical operational pain point: the inability to monitor real-time legal deadlines and solidary liability (*responsabilità in solido*) in complex subcontractor agreements. 
+## Asset Overview
+- **Entity Type**: SPOKE (Micro-SaaS)
+- **Name**: Subcontractor Risk Compliance Tracker
+- **Market Niche**: Studi Legali e Notai (Automazione audit e conformità per subappalti)
+- **Core Value Proposition**: Mitigazione del rischio da responsabilità in solido e monitoraggio in tempo reale delle scadenze legali nei contratti di subappalto.
+- **Target MRR Equivalent**: $1250 - $2000 (convertito in EUR: ~1150€ - 1850€)
+- **Monetization Model**: Stripe Credits / Pay-per-Use (One-time credit packs, `recurring = null`)
 
-Given the high stakes of professional liability and regulatory compliance in the legal sector, users possess strong purchasing power and low price sensitivity when solutions mitigate severe legal risks. However, as a micro-SaaS "Spoke" asset utilizing a Stripe Credit/Pay-per-use model, pricing must align with consumption habits (audit runs/checks) rather than rigid monthly subscriptions, eliminating friction for occasional users while rewarding heavy users.
+---
 
-## 2. Pricing Architecture & Psychological Anchoring
-In accordance with the Spoke entity rules, we deploy a consumption-based, one-time credit pass model (`recurring = null`) structured around psychological pricing thresholds ending in `9` (expressed in EUR cents):
+## Psychological Pricing & Anchoring Rationale
 
-1. **Audit Singolo Pass (29,00 EUR / 2900 cents)**
-   - **Credits:** 5 Audit Credits
-   - **Target Audience:** Solo practitioners or boutique firms testing the tool on an urgent, single-case basis.
-   - **Psychology:** Acts as an impulse buy below the critical psychological threshold of 30 EUR, framing risk mitigation as cheaper than a single billable hour.
+Per il target di riferimento (*Studi Legali e Notai*), il valore percepito del tempo risparmiato e del rischio evitato (sanzioni, contenziosi sulla responsabilità in solido) è estremamente alto. Tuttavia, trattandosi di un'applicazione Micro-SaaS di tipo "Spoke" focalizzata su un'esigenza specifica, il modello a consumo (*pay-per-use*) elimina le barriere d'ingresso tipiche degli abbonamenti ricorrenti non utilizzati.
 
-2. **Compliance Standard Pack (79,00 EUR / 7900 cents)**
-   - **Credits:** 20 Audit Credits (Best Value anchor)
-   - **Target Audience:** Small-to-medium law firms managing a stable portfolio of construction or corporate subcontracts.
-   - **Psychology:** The designated "sweet spot" or decoy-anchored option. At ~3.95 EUR per audit, it offers massive perceived value compared to the single pass (~5.80 EUR/audit), driving the majority of checkout conversions.
+Le soglie psicologiche sono state calibrate terminando con il finale **9** (`2900`, `6900`, `14900`) per massimizzare la percezione di convenienza pur mantenendo un posizionamento professionale B2B (alta marginalità).
 
-3. **Studio Legale Power Pass (149,00 EUR / 14900 cents)**
-   - **Credits:** 50 Audit Credits
-   - **Target Audience:** Mid-to-large notarized practices and legal departments handling high-volume corporate compliance tracking.
-   - **Psychology:** Positioned as an institutional-grade investment under the 150 EUR psychological ceiling, dropping the per-audit unit economics to ~2.98 EUR.
+### Tiers definiti:
+1. **Audit Singolo Pass (29,00 € - 5 Crediti)**: 
+   - *Target*: Studi individuali o professionisti occasionali.
+   - *Psicologia*: Prezzo d'impulso inferiore a una singola ora di consulenza legale, elimina qualsiasi attrito d'acquisto.
+2. **Compliance Pacchetto Standard (69,00 € - 15 Crediti)**: 
+   - *Target*: Studi associati di medie dimensioni.
+   - *Psicologia*: Rappresenta il "prezzo civetta" o ancora di valore, offrendo un costo per credito inferiore rispetto al pacchetto singolo e posizionandosi come la scelta più logica (*decoy effect*).
+3. **Enterprise Audit Pass (149,00 € - 40 Crediti)**: 
+   - *Target*: Grandi studi notarili o dipartimenti legali strutturati.
+   - *Psicologia*: Offerta ad alto volume per clienti con budget corporate che necessitano di monitoraggio continuativo senza vincoli di abbonamento mensile.
 
-## 3. Path to Target MRR ($1250 - $2000 / ~1150 EUR - 1850 EUR)
-To achieve a steady-state equivalent monthly revenue of **1.500 EUR** (midpoint of target MRR), the monetization engine relies on credit replenishment velocity rather than monthly recurring billing:
+---
 
-- **Average Order Value (AOV) Blend:** Assuming a healthy distribution where 30% choose Single Pass, 50% choose Standard Pack, and 20% choose Power Pass, the blended AOV per transaction is roughly **75,00 EUR**.
-- **Volume Required:** To clear 1.500 EUR/month, the platform requires approximately **20 credit pack purchases** per month across the user base.
-- **Unit Economics & Retention:** Because these are consumable credits, revenue scales linearly with platform usage and regulatory deadlines (e.g., tax/compliance seasons). Re-engagement automated emails triggered at 20% remaining credits will drive the necessary repeat purchase loop to hit target capitalization sustainably.
+## Path to Target MRR ($1250 - $2000 / ~1150€ - 1850€)
+
+Poiché il modello è basato su crediti prepagati (*one-time*), il calcolo del "Target MRR" si traduce nel volume equivalente di vendite mensili di pacchetti necessario per raggiungere stabilmente il fatturato target (assumendo una ripetitività d'acquisto stimata).
+
+### Ipotesi di Mix di Vendita Mensile:
+- **Pacchetto Singolo (29 €)**: ~15 transazioni/mese = 435 €
+- **Pacchetto Standard (69 €)**: ~12 transazioni/mese = 828 €
+- **Enterprise Pass (149 €)**: ~4 transazioni/mese = 596 €
+
+**Totale Fatturato Mensile Stimato**: **1.859 €** (perfettamente in linea con il target superiore di 2.000 $).
+
+### Strategia di Conversione e Retention:
+1. **Low Friction**: Primo audit di prova gratuito o a bassissimo costo per dimostrare immediatamente il valore sulla conformità dei subappalti.
+2. **Automated Reminders**: Notifiche automatiche via email quando i crediti stanno per esaurirsi o quando un contratto monitorato richiede un nuovo audit periodico.
+3. **Upsell**: Invito all'upgrade verso i pacchetti superiori basato sul volume effettivo di scadenze legali gestite dallo studio.
