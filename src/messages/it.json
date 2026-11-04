@@ -1,0 +1,117 @@
+{
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "subcontractors": "Subappaltatori",
+    "contracts": "Contratti",
+    "audits": "Audit di Conformità",
+    "settings": "Impostazioni"
+  },
+  "Dashboard": {
+    "title": "Centro di Controllo Rischi e Conformità",
+    "subtitle": "Gestione della responsabilità in solido, verifiche DURC/Visura in tempo reale e log di audit AI Claude Haiku 4.5.",
+    "metrics": {
+      "activeSubcontractors": "Subappaltatori Attivi",
+      "jointLiabilityExposure": "Esposizione Responsabilità Solidale",
+      "pendingAudits": "Audit In Sospeso",
+      "avgRiskScore": "Punteggio di Rischio Medio"
+    },
+    "recentAudits": "Audit Documentali AI Recenti",
+    "riskDistribution": "Distribuzione Rischio Subappaltatori",
+    "quickActions": "Azioni Rapide",
+    "registerSubcontractor": "Registra Subappaltatore",
+    "newContract": "Bozza Contratto",
+    "runAudit": "Carica e Verifica Documento"
+  },
+  "Subcontractors": {
+    "title": "Elenco Subappaltatori",
+    "subtitle": "Gestione entità aziendali, registri IVA, legali rappresentanti e assegnazione automatica del rischio.",
+    "addBtn": "Aggiungi Subappaltatore",
+    "table": {
+      "company": "Nome Azienda",
+      "vat": "Partita IVA",
+      "representative": "Legale Rappresentante",
+      "riskScore": "Indice di Rischio",
+      "status": "Stato",
+      "actions": "Azioni"
+    },
+    "status": {
+      "ACTIVE": "Attivo",
+      "SUSPENDED": "Sospeso",
+      "NON_COMPLIANT": "Non Conforme",
+      "UNDER_AUDIT": "In fase di Audit"
+    }
+  },
+  "Contracts": {
+    "title": "Contratti di Subappalto e Responsabilità Solidale",
+    "subtitle": "Tracciamento dei confini contrattuali, esposizione finanziaria e clausole di responsabilità solidale.",
+    "addBtn": "Nuovo Contratto",
+    "table": {
+      "code": "Codice Contratto",
+      "subcontractor": "Subappaltatore",
+      "value": "Valore (€)",
+      "jointLiability": "Responsabilità in Solido",
+      "validity": "Periodo di Validità",
+      "actions": "Azioni"
+    }
+  },
+  "Audits": {
+    "title": "Audit di Conformità e Motore AI Haiku",
+    "subtitle": "Verifica automatizzata di DURC, Visura Camerale e piani di sicurezza con estrazione tramite Claude Haiku 4.5.",
+    "addBtn": "Nuovo Audit Documentale",
+    "table": {
+      "documentType": "Tipo di Documento",
+      "subcontractor": "Subappaltatore",
+      "issueDate": "Data di Emissione",
+      "expiryDate": "Data di Scadenza",
+      "status": "Stato",
+      "actions": "Azioni"
+    },
+    "types": {
+      "DURC": "DURC (Previdenziale)",
+      "VISURA_CAMERALE": "Visura Camerale",
+      "ISO_CERTIFICATION": "Certificazione ISO",
+      "SAFETY_PLAN": "Piano di Sicurezza (POS/DUVRI)",
+      "ID_DOCUMENT": "Documento d'Identità"
+    },
+    "status": {
+      "PENDING": "In Attesa di Revisione AI",
+      "VALID": "Valido",
+      "EXPIRED": "Scaduto",
+      "REJECTED": "Respinto"
+    }
+  },
+  "Forms": {
+    "save": "Salva Record",
+    "cancel": "Annulla",
+    "success": "Record creato con successo.",
+    "subcontractor": {
+      "companyName": "Nome Azienda",
+      "vatNumber": "Partita IVA",
+      "legalRepresentative": "Legale Rappresentante",
+      "riskScore": "Punteggio di Rischio Iniziale (0-100)",
+      "status": "Stato di Conformità"
+    },
+    "contract": {
+      "code": "Codice Contratto",
+      "subcontractor": "ID Subappaltatore",
+      "jointLiability": "Clausola di Responsabilità Solidale Applicata",
+      "value": "Valore del Contratto (€)",
+      "startDate": "Data di Inizio",
+      "expirationDate": "Data di Scadenza"
+    },
+    "audit": {
+      "subcontractor": "Subappaltatore",
+      "documentType": "Tipo di Documento",
+      "issueDate": "Data di Emissione",
+      "expiryDate": "Data di Scadenza",
+      "fileUpload": "Carica Documento (PDF / Scansione)"
+    }
+  },
+  "ReportViewer": {
+    "title": "Rapporto di Audit AI Claude Haiku 4.5",
+    "summary": "Metadati Estratti e Valutazione di Conformità Legale",
+    "validityCheck": "Validità Normativa",
+    "riskAnalysis": "Fattori di Analisi del Rischio",
+    "close": "Chiudi Visualizzatore"
+  }
+}

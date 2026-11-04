@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Audit Singolo Pass",
+    "amount": 2900,
+    "recurring": null,
+    "key_suffix": "SINGLE_PASS",
+    "credits": 5,
+    "rationale": "Ideale per piccoli studi legali o notarili con necessità di verifica spot occasionali per singoli contratti di subappalto."
+  },
+  {
+    "name": "Pacchetto Conformità Standard",
+    "amount": 6900,
+    "recurring": null,
+    "key_suffix": "STANDARD_PASS",
+    "credits": 15,
+    "rationale": "Taglio ottimizzato per studi medi che gestiscono regolarmente posizioni di responsabilità solidale e scadenze periodiche."
+  },
+  {
+    "name": "Power Audit Pass",
+    "amount": 12900,
+    "recurring": null,
+    "key_suffix": "POWER_PASS",
+    "credits": 35,
+    "rationale": "Volume elevato per notarili strutturati o dipartimenti legali corporate con alto flusso di subappalti e monitoraggio massivo in tempo reale."
+  }
+]

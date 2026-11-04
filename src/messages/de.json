@@ -1,0 +1,117 @@
+{
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "subcontractors": "Subunternehmer",
+    "contracts": "Verträge",
+    "audits": "Compliance-Audits",
+    "settings": "Einstellungen"
+  },
+  "Dashboard": {
+    "title": "Risiko- und Compliance-Leitstand",
+    "subtitle": "Überwachung der gesamtschuldnerischen Haftung, Echtzeit-Prüfungen und Claude Haiku 4.5 KI-Audit-Protokolle.",
+    "metrics": {
+      "activeSubcontractors": "Aktive Subunternehmer",
+      "jointLiabilityExposure": "Haftungsrisiko",
+      "pendingAudits": "Ausstehende Audits",
+      "avgRiskScore": "Durchschnittlicher Risikoscore"
+    },
+    "recentAudits": "Kürzliche KI-Dokumentenprüfungen",
+    "riskDistribution": "Risikoverteilung der Subunternehmer",
+    "quickActions": "Schnellzugriff",
+    "registerSubcontractor": "Subunternehmer registrieren",
+    "newContract": "Vertrag entwerfen",
+    "runAudit": "Dokument hochladen & prüfen"
+  },
+  "Subcontractors": {
+    "title": "Subunternehmer-Verzeichnis",
+    "subtitle": "Verwaltung von Unternehmen, USt-IdNr., gesetzlichen Vertretern und automatisierter Risikobewertung.",
+    "addBtn": "Subunternehmer hinzufügen",
+    "table": {
+      "company": "Unternehmensname",
+      "vat": "USt-IdNr.",
+      "representative": "Gesetzlicher Vertreter",
+      "riskScore": "Risikoscore",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "status": {
+      "ACTIVE": "Aktiv",
+      "SUSPENDED": "Suspendiert",
+      "NON_COMPLIANT": "Nicht konform",
+      "UNDER_AUDIT": "In Prüfung"
+    }
+  },
+  "Contracts": {
+    "title": "Subunternehmerverträge & Gesamtschuldnerische Haftung",
+    "subtitle": "Nachverfolgung vertraglicher Grenzen, finanzieller Exposition und Haftungsklauseln.",
+    "addBtn": "Neuer Vertrag",
+    "table": {
+      "code": "Vertragscode",
+      "subcontractor": "Subunternehmer",
+      "value": "Wert (€)",
+      "jointLiability": "Gesamtschuldnerische Haftung",
+      "validity": "Gültigkeitsdauer",
+      "actions": "Aktionen"
+    }
+  },
+  "Audits": {
+    "title": "Compliance-Audits & KI-Haiku-Engine",
+    "subtitle": "Automatisierte Verifizierung von Bescheinigungen und Sicherheitsplänen mit Claude Haiku 4.5.",
+    "addBtn": "Neues Dokumenten-Audit",
+    "table": {
+      "documentType": "Dokumenttyp",
+      "subcontractor": "Subunternehmer",
+      "issueDate": "Ausstellungsdatum",
+      "expiryDate": "Ablaufdatum",
+      "status": "Status",
+      "actions": "Aktionen"
+    },
+    "types": {
+      "DURC": "Sozialversicherungsnachweis (DURC)",
+      "VISURA_CAMERALE": "Handelsregisterauszug",
+      "ISO_CERTIFICATION": "ISO-Zertifizierung",
+      "SAFETY_PLAN": "Sicherheitsplan",
+      "ID_DOCUMENT": "Ausweisdokument"
+    },
+    "status": {
+      "PENDING": "Wartet auf KI-Prüfung",
+      "VALID": "Gültig",
+      "EXPIRED": "Abgelaufen",
+      "REJECTED": "Abgelehnt"
+    }
+  },
+  "Forms": {
+    "save": "Datensatz speichern",
+    "cancel": "Abbrechen",
+    "success": "Datensatz erfolgreich erstellt.",
+    "subcontractor": {
+      "companyName": "Unternehmensname",
+      "vatNumber": "USt-IdNr.",
+      "legalRepresentative": "Gesetzlicher Vertreter",
+      "riskScore": "Initiale Risikobewertung (0-100)",
+      "status": "Compliance-Status"
+    },
+    "contract": {
+      "code": "Vertragscode",
+      "subcontractor": "Subunternehmer-ID",
+      "jointLiability": "Haftungsklausel durchgesetzt",
+      "value": "Vertragswert (€)",
+      "startDate": "Startdatum",
+      "expirationDate": "Ablaufdatum"
+    },
+    "audit": {
+      "subcontractor": "Subunternehmer",
+      "documentType": "Dokumenttyp",
+      "issueDate": "Ausstellungsdatum",
+      "expiryDate": "Ablaufdatum",
+      "fileUpload": "Dokument hochladen (PDF / Scan)"
+    }
+  },
+  "ReportViewer": {
+    "title": "Claude Haiku 4.5 KI-Auditbericht",
+    "summary": "Extrahierte Metadaten & rechtliche Compliance-Bewertung",
+    "validityCheck": "Regulatorische Gültigkeit",
+    "riskAnalysis": "Risikoanalysefaktoren",
+    "close": "Viewer schließen"
+  }
+}

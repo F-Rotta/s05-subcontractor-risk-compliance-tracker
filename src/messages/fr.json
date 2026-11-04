@@ -1,0 +1,117 @@
+{
+  "Navigation": {
+    "dashboard": "Tableau de bord",
+    "subcontractors": "Sous-traitants",
+    "contracts": "Contrats",
+    "audits": "Audits de conformité",
+    "settings": "Paramètres"
+  },
+  "Dashboard": {
+    "title": "Centre de Commandement des Risques et de la Conformité",
+    "subtitle": "Supervision de la responsabilité solidaire, vérifications en temps réel et journaux d'audit IA Claude Haiku 4.5.",
+    "metrics": {
+      "activeSubcontractors": "Sous-traitants Actifs",
+      "jointLiabilityExposure": "Exposition à la Responsabilité Solidaire",
+      "pendingAudits": "Audits en Attente",
+      "avgRiskScore": "Score de Risque Moyen"
+    },
+    "recentAudits": "Audits de Documents IA Récents",
+    "riskDistribution": "Distribution des Risques des Sous-traitants",
+    "quickActions": "Actions Rapides",
+    "registerSubcontractor": "Enregistrer un Sous-traitant",
+    "newContract": "Rédiger un Contrat",
+    "runAudit": "Télécharger et Auditer un Document"
+  },
+  "Subcontractors": {
+    "title": "Annuaire des Sous-traitants",
+    "subtitle": "Gérez les entités d'entreprise, les registres de TVA, les représentants légaux et la notation automatisée des risques.",
+    "addBtn": "Ajouter un Sous-traitant",
+    "table": {
+      "company": "Nom de l'Entreprise",
+      "vat": "Numéro de TVA",
+      "representative": "Représentant Légal",
+      "riskScore": "Score de Risque",
+      "status": "Statut",
+      "actions": "Actions"
+    },
+    "status": {
+      "ACTIVE": "Actif",
+      "SUSPENDED": "Suspendu",
+      "NON_COMPLIANT": "Non Conforme",
+      "UNDER_AUDIT": "Sous Audit"
+    }
+  },
+  "Contracts": {
+    "title": "Contrats de Sous-traitance et Responsabilité Solidaire",
+    "subtitle": "Suivi des limites contractuelles, de l'exposition financière et des clauses de responsabilité solidaire.",
+    "addBtn": "Nouveau Contrat",
+    "table": {
+      "code": "Code Contrat",
+      "subcontractor": "Sous-traitant",
+      "value": "Valeur (€)",
+      "jointLiability": "Responsabilité Solidaire",
+      "validity": "Période de Validité",
+      "actions": "Actions"
+    }
+  },
+  "Audits": {
+    "title": "Audits de Conformité et Moteur IA Haiku",
+    "subtitle": "Vérification automatisée des attestations et plans de sécurité avec extraction Claude Haiku 4.5.",
+    "addBtn": "Nouvel Audit de Document",
+    "table": {
+      "documentType": "Type de Document",
+      "subcontractor": "Sous-traitant",
+      "issueDate": "Date d'Émission",
+      "expiryDate": "Date d'Expiration",
+      "status": "Statut",
+      "actions": "Actions"
+    },
+    "types": {
+      "DURC": "Attestation de Sécurité Sociale",
+      "VISURA_CAMERALE": "Extrait Kbis / Registre du Commerce",
+      "ISO_CERTIFICATION": "Certification ISO",
+      "SAFETY_PLAN": "Plan de Sécurité",
+      "ID_DOCUMENT": "Document d'Identité"
+    },
+    "status": {
+      "PENDING": "En Attente de Révision IA",
+      "VALID": "Valide",
+      "EXPIRED": "Expiré",
+      "REJECTED": "Rejeté"
+    }
+  },
+  "Forms": {
+    "save": "Enregistrer l'Enregistrement",
+    "cancel": "Annuler",
+    "success": "Enregistrement créé avec succès.",
+    "subcontractor": {
+      "companyName": "Nom de l'Entreprise",
+      "vatNumber": "Numéro de TVA",
+      "legalRepresentative": "Représentant Légal",
+      "riskScore": "Score de Risque Initial (0-100)",
+      "status": "Statut de Conformité"
+    },
+    "contract": {
+      "code": "Code Contrat",
+      "subcontractor": "ID du Sous-traitant",
+      "jointLiability": "Clause de Responsabilité Solidaire Appliquée",
+      "value": "Valeur du Contrat (€)",
+      "startDate": "Date de Début",
+      "expirationDate": "Date d'Expiration"
+    },
+    "audit": {
+      "subcontractor": "Sous-traitant",
+      "documentType": "Type de Document",
+      "issueDate": "Date d'Émission",
+      "expiryDate": "Date d'Expiration",
+      "fileUpload": "Télécharger le Document (PDF / Scan)"
+    }
+  },
+  "ReportViewer": {
+    "title": "Rapport d'Audit IA Claude Haiku 4.5",
+    "summary": "Métadonnées Extraites et Évaluation de la Conformité Légale",
+    "validityCheck": "Validité Réglementaire",
+    "riskAnalysis": "Facteurs d'Analyse des Risques",
+    "close": "Fermer la Visionneuse"
+  }
+}

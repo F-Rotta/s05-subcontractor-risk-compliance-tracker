@@ -1,0 +1,117 @@
+{
+  "Navigation": {
+    "dashboard": "Dashboard",
+    "subcontractors": "Subcontractors",
+    "contracts": "Contracts",
+    "audits": "Compliance Audits",
+    "settings": "Settings"
+  },
+  "Dashboard": {
+    "title": "Risk & Compliance Command Center",
+    "subtitle": "Joint liability oversight, real-time DURC/Visura checks, and Claude Haiku 4.5 AI audit logs.",
+    "metrics": {
+      "activeSubcontractors": "Active Subcontractors",
+      "jointLiabilityExposure": "Joint Liability Exposure",
+      "pendingAudits": "Pending Audits",
+      "avgRiskScore": "Average Risk Score"
+    },
+    "recentAudits": "Recent AI Document Audits",
+    "riskDistribution": "Subcontractor Risk Distribution",
+    "quickActions": "Quick Actions",
+    "registerSubcontractor": "Register Subcontractor",
+    "newContract": "Draft Subcontract",
+    "runAudit": "Upload & Audit Document"
+  },
+  "Subcontractors": {
+    "title": "Subcontractors Directory",
+    "subtitle": "Manage corporate entities, VAT registries, legal representatives, and automated risk scoring.",
+    "addBtn": "Add Subcontractor",
+    "table": {
+      "company": "Company Name",
+      "vat": "VAT Number",
+      "representative": "Legal Representative",
+      "riskScore": "Risk Score",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended",
+      "NON_COMPLIANT": "Non-Compliant",
+      "UNDER_AUDIT": "Under Audit"
+    }
+  },
+  "Contracts": {
+    "title": "Subcontract Contracts & Joint Liability",
+    "subtitle": "Track contractual boundaries, financial exposure, and joint liability clauses (Responsabilità in Solido).",
+    "addBtn": "New Contract",
+    "table": {
+      "code": "Contract Code",
+      "subcontractor": "Subcontractor",
+      "value": "Value (€)",
+      "jointLiability": "Joint Liability",
+      "validity": "Validity Period",
+      "actions": "Actions"
+    }
+  },
+  "Audits": {
+    "title": "Compliance Audits & AI Haiku Engine",
+    "subtitle": "Automated verification of DURC, Visura Camerale, and safety plans with Claude Haiku 4.5 extraction.",
+    "addBtn": "New Document Audit",
+    "table": {
+      "documentType": "Document Type",
+      "subcontractor": "Subcontractor",
+      "issueDate": "Issue Date",
+      "expiryDate": "Expiry Date",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "types": {
+      "DURC": "DURC (Social Security)",
+      "VISURA_CAMERALE": "Visura Camerale",
+      "ISO_CERTIFICATION": "ISO Certification",
+      "SAFETY_PLAN": "Safety Plan (POS/DUVRI)",
+      "ID_DOCUMENT": "ID Document"
+    },
+    "status": {
+      "PENDING": "Pending AI Review",
+      "VALID": "Valid",
+      "EXPIRED": "Expired",
+      "REJECTED": "Rejected"
+    }
+  },
+  "Forms": {
+    "save": "Save Record",
+    "cancel": "Cancel",
+    "success": "Record successfully created.",
+    "subcontractor": {
+      "companyName": "Company Name",
+      "vatNumber": "VAT Number (Partita IVA)",
+      "legalRepresentative": "Legal Representative (Legale Rappresentante)",
+      "riskScore": "Initial Risk Score (0-100)",
+      "status": "Compliance Status"
+    },
+    "contract": {
+      "code": "Contract Code",
+      "subcontractor": "Subcontractor ID",
+      "jointLiability": "Joint Liability Clause Enforced",
+      "value": "Contract Value (€)",
+      "startDate": "Start Date",
+      "expirationDate": "Expiration Date"
+    },
+    "audit": {
+      "subcontractor": "Subcontractor",
+      "documentType": "Document Type",
+      "issueDate": "Issue Date",
+      "expiryDate": "Expiry Date",
+      "fileUpload": "Upload Document (PDF / Scan)"
+    }
+  },
+  "ReportViewer": {
+    "title": "Claude Haiku 4.5 AI Audit Report",
+    "summary": "Extracted Metadata & Legal Compliance Assessment",
+    "validityCheck": "Regulatory Validity",
+    "riskAnalysis": "Risk Analysis Factors",
+    "close": "Close Viewer"
+  }
+}
