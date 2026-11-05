@@ -1,210 +1,235 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
 import { useTranslations } from 'next-intl';
-import { FileText, Plus, Check, X } from 'lucide-react';
-import { SubcontractContract } from '@/lib/schemas/contract';
+import { PlusCircle, Search } from 'lucide-react';
+import Link from 'next/link';
 
-export default function ContractsPage() {
+// Define the Contract type based on your Prisma schema
+type Contract = {
+  id: string;
+  subcontractorId: string;
+  name: string;
+  description: string;
+  startDate: Date;
+  endDate: Date;
+  value: number;
+  status: 'verified' | 'under_review' | 'suspended' | 'blacklisted'; // Ensure this matches Prisma enum
+  complianceScore: number;
+  address: string;
+  complianceAudits: any[]; // Replace 'any' with actual ComplianceAudit type if available
+  complianceDocuments: any[]; // Replace 'any' with actual ComplianceDocument type if available
+  createdAt: Date;
+  updatedAt?: Date;
+};
+
+const ContractsPage: React.FC = () => {
   const t = useTranslations('Contracts');
-  const tForms = useTranslations('Forms');
+  const [contracts, setContracts] = useState<Contract[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const [contracts, setContracts] = useState<SubcontractContract[]>([
-    {
-      id: 'c1017384-d113-4ec6-a57f-d1e028b030c1',
-      spoke_org_id: 'a0000000-0000-0000-0000-000000000001',
-      subcontractor_id: 'd3b07384-d113-4ec6-a57f-d1e028b030c1',
-      contract_code: 'CTR-2025-089',
-      joint_liability_clause: true,
-      contract_value: 450000.00,
-      start_date: '2025-01-01',
-      expiration_date: '2025-12-31',
-      created_at: '2025-01-02T10:00:00Z',
-    },
-    {
-      id: 'c1017384-d113-4ec6-a57f-d1e028b030c2',
-      spoke_org_id: 'a0000000-0000-0000-0000-000000000001',
-      subcontractor_id: 'd3b07384-d113-4ec6-a57f-d1e028b030c2',
-      contract_code: 'CTR-2025-092',
-      joint_liability_clause: true,
-      contract_value: 180000.50,
-      start_date: '2025-02-01',
-      expiration_date: '2026-01-31',
-      created_at: '2025-02-01T11:00:00Z',
-    },
-  ]);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    contract_code: '',
-    subcontractor_id: 'd3b07384-d113-4ec6-a57f-d1e028b030c1',
-    joint_liability_clause: true,
-    contract_value: 100000,
-    start_date: '2025-03-01',
-    expiration_date: '2026-03-01',
-  });
-
-  const handleCreate = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newContract: SubcontractContract = {
-      id: crypto.randomUUID(),
-      spoke_org_id: 'a0000000-0000-0000-0000-000000000001',
-      ...formData,
-      created_at: new Date().toISOString(),
+  useEffect(() => {
+    const fetchContracts = async () => {
+      try {
+        setLoading(true);
+        // This is mock data. In a real application, you would fetch this from your API.
+        const mockContracts: Contract[] = [
+          {
+            id: 'c001',
+            subcontractorId: 's001',
+            name: 'Construction Project A',
+            description: 'Building new office complex',
+            startDate: new Date('2023-01-15'),
+            endDate: new Date('2024-06-30'),
+            value: 1500000,
+            address: '123 Main St',
+            complianceScore: 85,
+            status: 'verified', // Changed 'Active' to 'verified'
+            complianceAudits: [],
+            complianceDocuments: [],
+            createdAt: new Date('2022-12-01'),
+          },
+          {
+            id: 'c002',
+            subcontractorId: 's002',
+            name: 'IT Services Contract',
+            description: 'Managed IT services for 2 years',
+            startDate: new Date('2023-03-01'),
+            endDate: new Date('2025-02-28'),
+            value: 500000,
+            address: '456 Oak Ave',
+            complianceScore: 92,
+            status: 'under_review', // Changed 'Pending' to 'under_review'
+            complianceAudits: [],
+            complianceDocuments: [],
+            createdAt: new Date('2023-02-10'),
+          },
+          {
+            id: 'c003',
+            subcontractorId: 's003',
+            name: 'Logistics Partnership',
+            description: 'Supply chain management',
+            startDate: new Date('2023-05-01'),
+            endDate: new Date('2026-04-30'),
+            value: 2000000,
+            address: '789 Pine Ln',
+            complianceScore: 78,
+            status: 'suspended', // Changed 'Suspended' to 'suspended'
+            complianceAudits: [],
+            complianceDocuments: [],
+            createdAt: new Date('2023-04-15'),
+          },
+        ];
+        setContracts(mockContracts);
+      } catch (err) {
+        setError(t('fetchError'));
+        console.error('Error fetching contracts:', err);
+      } finally {
+        setLoading(false);
+      }
     };
-    setContracts([newContract, ...contracts]);
-    setIsModalOpen(false);
+
+    fetchContracts();
+  }, [t]);
+
+  const filteredContracts = contracts.filter(
+    (contract) =>
+      contract.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contract.subcontractorId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contract.status.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const getStatusBadgeVariant = (
+    status: 'verified' | 'under_review' | 'suspended' | 'blacklisted'
+  ) => {
+    switch (status) {
+      case 'verified':
+        return 'default';
+      case 'under_review':
+        return 'secondary';
+      case 'suspended':
+        return 'destructive';
+      case 'blacklisted':
+        return 'destructive';
+      default:
+        return 'outline';
+    }
   };
 
+  if (loading) {
+    return <div className="p-6">{t('loading')}</div>;
+  }
+
+  if (error) {
+    return <div className="p-6 text-red-500">{error}</div>;
+  }
+
   return (
-    <div className="space-y-8">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-white mb-2">{t('title')}</h1>
-          <p className="text-slate-400 text-sm max-w-2xl">{t('subtitle')}</p>
-        </div>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#cbfa1f] text-[#101728] font-bold text-sm hover:bg-[#b8e61b] transition-colors shadow-lg shadow-[#cbfa1f]/10"
-        >
-          <Plus className="w-4 h-4" /> {t('addBtn')}
-        </button>
+    <div className="flex flex-col gap-6 p-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">{t('title')}</h1>
+        <Link href="/contracts/new">
+          <Button>
+            <PlusCircle className="mr-2 h-4 w-4" />
+            {t('newContract')}
+          </Button>
+        </Link>
       </div>
 
-      <div className="bg-[#141e33] border border-[#1f2f53] rounded-2xl overflow-hidden shadow-xl">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-[#1f2f53] bg-[#1a294d]/30 text-xs font-medium text-slate-400 uppercase tracking-wider">
-                <th className="p-5">{t('table.code')}</th>
-                <th className="p-5">{t('table.subcontractor')}</th>
-                <th className="p-5">{t('table.value')}</th>
-                <th className="p-5">{t('table.jointLiability')}</th>
-                <th className="p-5">{t('table.validity')}</th>
-                <th className="p-5 text-right">{t('table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#1f2f53]/50">
-              {contracts.map((c) => (
-                <tr key={c.id} className="hover:bg-[#1a294d]/40 transition-colors">
-                  <td className="p-5 font-mono font-semibold text-white">{c.contract_code}</td>
-                  <td className="p-5 text-slate-300">Edilizia Moderna S.r.l.</td>
-                  <td className="p-5 font-mono text-emerald-400 font-semibold">€ {c.contract_value.toLocaleString('it-IT', { minimumFractionDigits: 2 })}</td>
-                  <td className="p-5">
-                    {c.joint_liability_clause ? (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        <Check className="w-3 h-3" /> Enforced
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-400 border border-red-500/20">
-                        <X className="w-3 h-3" /> Missing
-                      </span>
-                    )}
-                  </td>
-                  <td className="p-5 font-mono text-xs text-slate-300">
-                    {c.start_date} → {c.expiration_date}
-                  </td>
-                  <td className="p-5 text-right">
-                    <button className="px-3 py-1.5 rounded-lg bg-[#1a294d] text-[#cbfa1f] hover:bg-[#233663] text-xs font-medium transition-colors border border-[#2a3f75]">
-                      Review Clause
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Search className="h-5 w-5 text-muted-foreground" />
+            {t('searchContracts')}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Input
+            placeholder={t('searchPlaceholder')}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="max-w-sm"
+          />
+        </CardContent>
+      </Card>
 
-      {/* Modal Form */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-[#141e33] border border-[#1f2f53] rounded-2xl max-w-lg w-full p-6 space-y-6 shadow-2xl">
-            <div className="flex items-center justify-between border-b border-[#1f2f53] pb-4">
-              <h3 className="text-xl font-bold text-white">{t('addBtn')}</h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white">✕</button>
+      <Card>
+        <CardHeader>
+          <CardTitle>{t('contractsList')}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {filteredContracts.length === 0 ? (
+            <p>{t('noContractsFound')}</p>
+          ) : (
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>{t('contractName')}</TableHead>
+                    <TableHead>{t('subcontractorId')}</TableHead>
+                    <TableHead>{t('value')}</TableHead>
+                    <TableHead>{t('startDate')}</TableHead>
+                    <TableHead>{t('endDate')}</TableHead>
+                    <TableHead>{t('complianceScore')}</TableHead>
+                    <TableHead>{t('status')}</TableHead>
+                    <TableHead className="text-right">{t('actions')}</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredContracts.map((contract) => (
+                    <TableRow key={contract.id}>
+                      <TableCell className="font-medium">
+                        {contract.name}
+                      </TableCell>
+                      <TableCell>{contract.subcontractorId}</TableCell>
+                      <TableCell>
+                        ${contract.value.toLocaleString()}
+                      </TableCell>
+                      <TableCell>
+                        {new Date(contract.startDate).toLocaleDateString()}
+                      </TableCell>
+                      <TableCell>
+                        {new Date(contract.endDate).toLocaleDateString()}
+                      </TableCell>
+                      <TableCell>{contract.complianceScore}%</TableCell>
+                      <TableCell>
+                        <Badge
+                          variant={getStatusBadgeVariant(contract.status)}
+                        >
+                          {t(`status.${contract.status}`)}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Link href={`/contracts/${contract.id}`}>
+                          <Button variant="ghost" size="sm">
+                            {t('view')}
+                          </Button>
+                        </Link>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
-
-            <form onSubmit={handleCreate} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">{tForms('contract.code')}</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.contract_code}
-                  onChange={(e) => setFormData({ ...formData, contract_code: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101728] border border-[#1f2f53] text-white focus:outline-none focus:border-[#cbfa1f]"
-                  placeholder="CTR-2025-100"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">{tForms('contract.value')}</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  required
-                  value={formData.contract_value}
-                  onChange={(e) => setFormData({ ...formData, contract_value: parseFloat(e.target.value) })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101728] border border-[#1f2f53] text-white focus:outline-none focus:border-[#cbfa1f]"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">{tForms('contract.startDate')}</label>
-                  <input
-                    type="date"
-                    required
-                    value={formData.start_date}
-                    onChange={(e) => setFormData({ ...formData, start_date: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#101728] border border-[#1f2f53] text-white focus:outline-none focus:border-[#cbfa1f]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1.5">{tForms('contract.expirationDate')}</label>
-                  <input
-                    type="date"
-                    required
-                    value={formData.expiration_date}
-                    onChange={(e) => setFormData({ ...formData, expiration_date: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#101728] border border-[#1f2f53] text-white focus:outline-none focus:border-[#cbfa1f]"
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 pt-2">
-                <input
-                  type="checkbox"
-                  id="joint_liability"
-                  checked={formData.joint_liability_clause}
-                  onChange={(e) => setFormData({ ...formData, joint_liability_clause: e.target.checked })}
-                  className="w-4 h-4 rounded bg-[#101728] border-[#1f2f53] text-[#cbfa1f] focus:ring-0"
-                />
-                <label htmlFor="joint_liability" className="text-xs font-semibold text-slate-300">
-                  {tForms('contract.jointLiability')}
-                </label>
-              </div>
-
-              <div className="flex justify-end gap-3 pt-4 border-t border-[#1f2f53]">
-                <button
-                  type="button"
-                  onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2.5 rounded-xl bg-[#1a294d] text-slate-300 hover:text-white text-sm font-medium"
-                >
-                  {tForms('cancel')}
-                </button>
-                <button
-                  type="submit"
-                  className="px-5 py-2.5 rounded-xl bg-[#cbfa1f] text-[#101728] font-bold text-sm hover:bg-[#b8e61b] transition-colors"
-                >
-                  {tForms('save')}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
-}
+};
+
+export default ContractsPage;

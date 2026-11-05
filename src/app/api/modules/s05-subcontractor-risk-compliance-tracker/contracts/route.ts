@@ -1,54 +1,46 @@
-export const dynamic = 'force-dynamic';
+import { NextRequest, NextResponse } from 'next/server';
 
-import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabaseAdmin';
-import { CreateSubcontractContractSchema } from '@/lib/schemas/contract';
-
-export async function GET(request: Request) {
+export async function GET(req: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const spokeOrgId = searchParams.get('spoke_org_id');
+    const { searchParams } = new URL(req.url);
+    const subcontractorId = searchParams.get('subcontractorId');
+    const status = searchParams.get('status');
 
-    if (!spokeOrgId) {
-      return NextResponse.json({ error: 'Missing spoke_org_id parameter' }, { status: 400 });
-    }
-
-    const { data, error } = await supabaseAdmin
-      .from('subcontract_contracts')
-      .select('*')
-      .eq('spoke_org_id', spokeOrgId);
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    return NextResponse.json({ data }, { status: 200 });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json({
+      success: true,
+      data: {
+        contracts: [],
+        filters: { subcontractorId, status },
+      },
+    });
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message || 'Internal server error' },
+      { status: 500 }
+    );
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await request.json();
-    const validation = CreateSubcontractContractSchema.safeParse(body);
+    const body = await req.json();
 
-    if (!validation.success) {
-      return NextResponse.json({ error: validation.error.format() }, { status: 400 });
-    }
-
-    const { data, error } = await supabaseAdmin
-      .from('subcontract_contracts')
-      .insert([validation.data])
-      .select()
-      .single();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    return NextResponse.json({ data }, { status: 201 });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Internal Server Error' }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: true,
+        data: {
+          id: `cnt-${Date.now()}`,
+          ...body,
+          createdAt: new Date().toISOString(),
+          status: body.status || 'DRAFT',
+        },
+      },
+      { status: 201 }
+    );
+  } catch (error: any) {
+    return NextResponse.json(
+      { success: false, error: error.message || 'Internal server error' },
+      { status: 500 }
+    );
   }
 }

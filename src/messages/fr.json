@@ -1,117 +1,59 @@
 {
-  "Navigation": {
-    "dashboard": "Tableau de bord",
-    "subcontractors": "Sous-traitants",
-    "contracts": "Contrats",
-    "audits": "Audits de conformité",
-    "settings": "Paramètres"
-  },
-  "Dashboard": {
-    "title": "Centre de Commandement des Risques et de la Conformité",
-    "subtitle": "Supervision de la responsabilité solidaire, vérifications en temps réel et journaux d'audit IA Claude Haiku 4.5.",
-    "metrics": {
-      "activeSubcontractors": "Sous-traitants Actifs",
-      "jointLiabilityExposure": "Exposition à la Responsabilité Solidaire",
-      "pendingAudits": "Audits en Attente",
-      "avgRiskScore": "Score de Risque Moyen"
+  "S05": {
+    "title": "Suivi des Risques et Conformité des Sous-traitants",
+    "subtitle": "Audit automatisé et conformité à la responsabilité solidaire pour cabinets d'avocats et notaires",
+    "niche": "Cabinets d'Avocats et Notaires",
+    "auth": {
+      "signInTitle": "Connexion Sécurisée Cabinet",
+      "signInSubtitle": "Saisissez votre e-mail professionnel pour une authentification instantanée par Magic Link",
+      "emailPlaceholder": "avocat@cabinet-juridique.fr",
+      "sendMagicLink": "Envoyer le Magic Link",
+      "signOut": "Se déconnecter",
+      "authenticatedAs": "Authentifié en tant que"
     },
-    "recentAudits": "Audits de Documents IA Récents",
-    "riskDistribution": "Distribution des Risques des Sous-traitants",
-    "quickActions": "Actions Rapides",
-    "registerSubcontractor": "Enregistrer un Sous-traitant",
-    "newContract": "Rédiger un Contrat",
-    "runAudit": "Télécharger et Auditer un Document"
-  },
-  "Subcontractors": {
-    "title": "Annuaire des Sous-traitants",
-    "subtitle": "Gérez les entités d'entreprise, les registres de TVA, les représentants légaux et la notation automatisée des risques.",
-    "addBtn": "Ajouter un Sous-traitant",
-    "table": {
-      "company": "Nom de l'Entreprise",
-      "vat": "Numéro de TVA",
-      "representative": "Représentant Légal",
-      "riskScore": "Score de Risque",
-      "status": "Statut",
-      "actions": "Actions"
+    "credits": {
+      "title": "Crédits Stripe",
+      "remaining": "Crédits Restants",
+      "topUp": "Acheter des Passes",
+      "modalTitle": "Sélectionner un Forfait de Crédits d'Audit",
+      "modalSubtitle": "Crédits d'inspection de conformité IA à l'usage propulsés par Claude Haiku 4.5",
+      "singlePass": "Passe Audit Unique (1 Crédit)",
+      "standardPass": "Forfait Standard (10 Crédits)",
+      "powerPass": "Passe Annuel Enterprise (50 Crédits)",
+      "buyNow": "Procéder au Paiement Stripe"
     },
-    "status": {
-      "ACTIVE": "Actif",
-      "SUSPENDED": "Suspendu",
-      "NON_COMPLIANT": "Non Conforme",
-      "UNDER_AUDIT": "Sous Audit"
-    }
-  },
-  "Contracts": {
-    "title": "Contrats de Sous-traitance et Responsabilité Solidaire",
-    "subtitle": "Suivi des limites contractuelles, de l'exposition financière et des clauses de responsabilité solidaire.",
-    "addBtn": "Nouveau Contrat",
-    "table": {
-      "code": "Code Contrat",
-      "subcontractor": "Sous-traitant",
-      "value": "Valeur (€)",
-      "jointLiability": "Responsabilité Solidaire",
-      "validity": "Période de Validité",
-      "actions": "Actions"
-    }
-  },
-  "Audits": {
-    "title": "Audits de Conformité et Moteur IA Haiku",
-    "subtitle": "Vérification automatisée des attestations et plans de sécurité avec extraction Claude Haiku 4.5.",
-    "addBtn": "Nouvel Audit de Document",
-    "table": {
-      "documentType": "Type de Document",
-      "subcontractor": "Sous-traitant",
-      "issueDate": "Date d'Émission",
-      "expiryDate": "Date d'Expiration",
-      "status": "Statut",
-      "actions": "Actions"
+    "dashboard": {
+      "totalSubcontractors": "Sous-traitants Actifs",
+      "complianceRate": "Taux de Conformité",
+      "highRiskAlerts": "Alertes de Risque Critique",
+      "pendingAudits": "Audits Art. 29 en Attente",
+      "tabOverview": "Aperçu & Analyses",
+      "tabSubcontractors": "Sous-traitants & N° TVA",
+      "tabDocuments": "Documents de Conformité",
+      "tabAudits": "Audits de Responsabilité Solidaire Art. 29",
+      "tabAlerts": "Alertes Actives"
     },
-    "types": {
-      "DURC": "Attestation de Sécurité Sociale",
-      "VISURA_CAMERALE": "Extrait Kbis / Registre du Commerce",
-      "ISO_CERTIFICATION": "Certification ISO",
-      "SAFETY_PLAN": "Plan de Sécurité",
-      "ID_DOCUMENT": "Document d'Identité"
+    "intake": {
+      "title": "Lancer l'Inspection de Conformité IA",
+      "subtitle": "Importez le DURC, DURF ou quittance F24 pour la détection automatisée d'anomalies par Haiku 4.5",
+      "selectType": "Type de Document",
+      "vatNumber": "Numéro de TVA / Code Fiscal du Sous-traitant",
+      "protocolNumber": "Numéro de Protocole / Identifiant",
+      "dropzone": "Glissez-déposez le document de conformité (PDF / XML / P7M) ou cliquez pour parcourir",
+      "submitButton": "Lancer l'Audit de Conformité IA"
     },
     "status": {
-      "PENDING": "En Attente de Révision IA",
-      "VALID": "Valide",
-      "EXPIRED": "Expiré",
-      "REJECTED": "Rejeté"
+      "verified": "Vérifié",
+      "underReview": "En Cours de Révision",
+      "suspended": "Suspendu",
+      "blacklisted": "Sur Liste Noire",
+      "valid": "Valide",
+      "expired": "Expiré",
+      "irregular": "Irrégulier",
+      "pending": "En Attente",
+      "cleared": "Régularisé",
+      "breachDetected": "Infraction Détectée",
+      "cautionaryWithholding": "Retenue Conservatoire"
     }
-  },
-  "Forms": {
-    "save": "Enregistrer l'Enregistrement",
-    "cancel": "Annuler",
-    "success": "Enregistrement créé avec succès.",
-    "subcontractor": {
-      "companyName": "Nom de l'Entreprise",
-      "vatNumber": "Numéro de TVA",
-      "legalRepresentative": "Représentant Légal",
-      "riskScore": "Score de Risque Initial (0-100)",
-      "status": "Statut de Conformité"
-    },
-    "contract": {
-      "code": "Code Contrat",
-      "subcontractor": "ID du Sous-traitant",
-      "jointLiability": "Clause de Responsabilité Solidaire Appliquée",
-      "value": "Valeur du Contrat (€)",
-      "startDate": "Date de Début",
-      "expirationDate": "Date d'Expiration"
-    },
-    "audit": {
-      "subcontractor": "Sous-traitant",
-      "documentType": "Type de Document",
-      "issueDate": "Date d'Émission",
-      "expiryDate": "Date d'Expiration",
-      "fileUpload": "Télécharger le Document (PDF / Scan)"
-    }
-  },
-  "ReportViewer": {
-    "title": "Rapport d'Audit IA Claude Haiku 4.5",
-    "summary": "Métadonnées Extraites et Évaluation de la Conformité Légale",
-    "validityCheck": "Validité Réglementaire",
-    "riskAnalysis": "Facteurs d'Analyse des Risques",
-    "close": "Fermer la Visionneuse"
   }
 }

@@ -1,117 +1,59 @@
 {
-  "Navigation": {
-    "dashboard": "Dashboard",
-    "subcontractors": "Subcontractors",
-    "contracts": "Contracts",
-    "audits": "Compliance Audits",
-    "settings": "Settings"
-  },
-  "Dashboard": {
-    "title": "Risk & Compliance Command Center",
-    "subtitle": "Joint liability oversight, real-time DURC/Visura checks, and Claude Haiku 4.5 AI audit logs.",
-    "metrics": {
-      "activeSubcontractors": "Active Subcontractors",
-      "jointLiabilityExposure": "Joint Liability Exposure",
-      "pendingAudits": "Pending Audits",
-      "avgRiskScore": "Average Risk Score"
+  "S05": {
+    "title": "Subcontractor Risk Compliance Tracker",
+    "subtitle": "Automated audit and solidary liability compliance for law firms and notary practices",
+    "niche": "Studi Legali e Notai",
+    "auth": {
+      "signInTitle": "Secure Law Firm Sign-In",
+      "signInSubtitle": "Enter your professional email for instant Magic Link authentication",
+      "emailPlaceholder": "avvocato@studiolegale.it",
+      "sendMagicLink": "Send Magic Link",
+      "signOut": "Sign Out",
+      "authenticatedAs": "Authenticated as"
     },
-    "recentAudits": "Recent AI Document Audits",
-    "riskDistribution": "Subcontractor Risk Distribution",
-    "quickActions": "Quick Actions",
-    "registerSubcontractor": "Register Subcontractor",
-    "newContract": "Draft Subcontract",
-    "runAudit": "Upload & Audit Document"
-  },
-  "Subcontractors": {
-    "title": "Subcontractors Directory",
-    "subtitle": "Manage corporate entities, VAT registries, legal representatives, and automated risk scoring.",
-    "addBtn": "Add Subcontractor",
-    "table": {
-      "company": "Company Name",
-      "vat": "VAT Number",
-      "representative": "Legal Representative",
-      "riskScore": "Risk Score",
-      "status": "Status",
-      "actions": "Actions"
+    "credits": {
+      "title": "Stripe Credits",
+      "remaining": "Credits Remaining",
+      "topUp": "Buy Passes",
+      "modalTitle": "Select Audit Credit Package",
+      "modalSubtitle": "Pay-per-use AI compliance inspection credits for Claude Haiku 4.5 engine",
+      "singlePass": "Single Audit Pass (1 Credit)",
+      "standardPass": "Standard Bundle (10 Credits)",
+      "powerPass": "Enterprise Annual Pass (50 Credits)",
+      "buyNow": "Proceed to Stripe Checkout"
     },
-    "status": {
-      "ACTIVE": "Active",
-      "SUSPENDED": "Suspended",
-      "NON_COMPLIANT": "Non-Compliant",
-      "UNDER_AUDIT": "Under Audit"
-    }
-  },
-  "Contracts": {
-    "title": "Subcontract Contracts & Joint Liability",
-    "subtitle": "Track contractual boundaries, financial exposure, and joint liability clauses (Responsabilità in Solido).",
-    "addBtn": "New Contract",
-    "table": {
-      "code": "Contract Code",
-      "subcontractor": "Subcontractor",
-      "value": "Value (€)",
-      "jointLiability": "Joint Liability",
-      "validity": "Validity Period",
-      "actions": "Actions"
-    }
-  },
-  "Audits": {
-    "title": "Compliance Audits & AI Haiku Engine",
-    "subtitle": "Automated verification of DURC, Visura Camerale, and safety plans with Claude Haiku 4.5 extraction.",
-    "addBtn": "New Document Audit",
-    "table": {
-      "documentType": "Document Type",
-      "subcontractor": "Subcontractor",
-      "issueDate": "Issue Date",
-      "expiryDate": "Expiry Date",
-      "status": "Status",
-      "actions": "Actions"
+    "dashboard": {
+      "totalSubcontractors": "Active Subcontractors",
+      "complianceRate": "Compliance Rate",
+      "highRiskAlerts": "Critical Risk Alerts",
+      "pendingAudits": "Pending Art. 29 Audits",
+      "tabOverview": "Overview & Analytics",
+      "tabSubcontractors": "Subcontractors & Vat",
+      "tabDocuments": "Compliance Documents",
+      "tabAudits": "Art. 29 Joint Liability Audits",
+      "tabAlerts": "Active Alerts"
     },
-    "types": {
-      "DURC": "DURC (Social Security)",
-      "VISURA_CAMERALE": "Visura Camerale",
-      "ISO_CERTIFICATION": "ISO Certification",
-      "SAFETY_PLAN": "Safety Plan (POS/DUVRI)",
-      "ID_DOCUMENT": "ID Document"
+    "intake": {
+      "title": "Run AI Compliance Inspection",
+      "subtitle": "Upload DURC, DURF, or F24 quittance for automated Haiku 4.5 anomaly detection",
+      "selectType": "Document Type",
+      "vatNumber": "Subcontractor VAT / Fiscal Code",
+      "protocolNumber": "Protocol / Identifier Number",
+      "dropzone": "Drag & drop compliance document (PDF / XML / P7M) or click to browse",
+      "submitButton": "Run AI Compliance Audit"
     },
     "status": {
-      "PENDING": "Pending AI Review",
-      "VALID": "Valid",
-      "EXPIRED": "Expired",
-      "REJECTED": "Rejected"
+      "verified": "Verified",
+      "underReview": "Under Review",
+      "suspended": "Suspended",
+      "blacklisted": "Blacklisted",
+      "valid": "Valid",
+      "expired": "Expired",
+      "irregular": "Irregular",
+      "pending": "Pending",
+      "cleared": "Cleared",
+      "breachDetected": "Breach Detected",
+      "cautionaryWithholding": "Cautionary Withholding"
     }
-  },
-  "Forms": {
-    "save": "Save Record",
-    "cancel": "Cancel",
-    "success": "Record successfully created.",
-    "subcontractor": {
-      "companyName": "Company Name",
-      "vatNumber": "VAT Number (Partita IVA)",
-      "legalRepresentative": "Legal Representative (Legale Rappresentante)",
-      "riskScore": "Initial Risk Score (0-100)",
-      "status": "Compliance Status"
-    },
-    "contract": {
-      "code": "Contract Code",
-      "subcontractor": "Subcontractor ID",
-      "jointLiability": "Joint Liability Clause Enforced",
-      "value": "Contract Value (€)",
-      "startDate": "Start Date",
-      "expirationDate": "Expiration Date"
-    },
-    "audit": {
-      "subcontractor": "Subcontractor",
-      "documentType": "Document Type",
-      "issueDate": "Issue Date",
-      "expiryDate": "Expiry Date",
-      "fileUpload": "Upload Document (PDF / Scan)"
-    }
-  },
-  "ReportViewer": {
-    "title": "Claude Haiku 4.5 AI Audit Report",
-    "summary": "Extracted Metadata & Legal Compliance Assessment",
-    "validityCheck": "Regulatory Validity",
-    "riskAnalysis": "Risk Analysis Factors",
-    "close": "Close Viewer"
   }
 }

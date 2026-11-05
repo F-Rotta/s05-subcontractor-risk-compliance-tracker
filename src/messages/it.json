@@ -1,117 +1,59 @@
 {
-  "Navigation": {
-    "dashboard": "Dashboard",
-    "subcontractors": "Subappaltatori",
-    "contracts": "Contratti",
-    "audits": "Audit di Conformità",
-    "settings": "Impostazioni"
-  },
-  "Dashboard": {
-    "title": "Centro di Controllo Rischi e Conformità",
-    "subtitle": "Gestione della responsabilità in solido, verifiche DURC/Visura in tempo reale e log di audit AI Claude Haiku 4.5.",
-    "metrics": {
-      "activeSubcontractors": "Subappaltatori Attivi",
-      "jointLiabilityExposure": "Esposizione Responsabilità Solidale",
-      "pendingAudits": "Audit In Sospeso",
-      "avgRiskScore": "Punteggio di Rischio Medio"
+  "S05": {
+    "title": "Monitoraggio Rischio e Conformità Subappalti",
+    "subtitle": "Audit automatizzato e conformità della responsabilità solidale per studi legali e notarili",
+    "niche": "Studi Legali e Notai",
+    "auth": {
+      "signInTitle": "Accesso Sicuro Studio Legale",
+      "signInSubtitle": "Inserisci l'email professionale per l'autenticazione istantanea con Magic Link",
+      "emailPlaceholder": "avvocato@studiolegale.it",
+      "sendMagicLink": "Invia Magic Link",
+      "signOut": "Disconnetti",
+      "authenticatedAs": "Autenticato come"
     },
-    "recentAudits": "Audit Documentali AI Recenti",
-    "riskDistribution": "Distribuzione Rischio Subappaltatori",
-    "quickActions": "Azioni Rapide",
-    "registerSubcontractor": "Registra Subappaltatore",
-    "newContract": "Bozza Contratto",
-    "runAudit": "Carica e Verifica Documento"
-  },
-  "Subcontractors": {
-    "title": "Elenco Subappaltatori",
-    "subtitle": "Gestione entità aziendali, registri IVA, legali rappresentanti e assegnazione automatica del rischio.",
-    "addBtn": "Aggiungi Subappaltatore",
-    "table": {
-      "company": "Nome Azienda",
-      "vat": "Partita IVA",
-      "representative": "Legale Rappresentante",
-      "riskScore": "Indice di Rischio",
-      "status": "Stato",
-      "actions": "Azioni"
+    "credits": {
+      "title": "Crediti Stripe",
+      "remaining": "Crediti Residui",
+      "topUp": "Acquista Pacchetti",
+      "modalTitle": "Seleziona Pacchetto Crediti Audit",
+      "modalSubtitle": "Crediti pay-per-use per ispezione di conformità AI con motore Claude Haiku 4.5",
+      "singlePass": "Pass Audit Singolo (1 Credito)",
+      "standardPass": "Pacchetto Standard (10 Crediti)",
+      "powerPass": "Pass Annuale Enterprise (50 Crediti)",
+      "buyNow": "Procedi al Checkout Stripe"
     },
-    "status": {
-      "ACTIVE": "Attivo",
-      "SUSPENDED": "Sospeso",
-      "NON_COMPLIANT": "Non Conforme",
-      "UNDER_AUDIT": "In fase di Audit"
-    }
-  },
-  "Contracts": {
-    "title": "Contratti di Subappalto e Responsabilità Solidale",
-    "subtitle": "Tracciamento dei confini contrattuali, esposizione finanziaria e clausole di responsabilità solidale.",
-    "addBtn": "Nuovo Contratto",
-    "table": {
-      "code": "Codice Contratto",
-      "subcontractor": "Subappaltatore",
-      "value": "Valore (€)",
-      "jointLiability": "Responsabilità in Solido",
-      "validity": "Periodo di Validità",
-      "actions": "Azioni"
-    }
-  },
-  "Audits": {
-    "title": "Audit di Conformità e Motore AI Haiku",
-    "subtitle": "Verifica automatizzata di DURC, Visura Camerale e piani di sicurezza con estrazione tramite Claude Haiku 4.5.",
-    "addBtn": "Nuovo Audit Documentale",
-    "table": {
-      "documentType": "Tipo di Documento",
-      "subcontractor": "Subappaltatore",
-      "issueDate": "Data di Emissione",
-      "expiryDate": "Data di Scadenza",
-      "status": "Stato",
-      "actions": "Azioni"
+    "dashboard": {
+      "totalSubcontractors": "Subappaltatori Attivi",
+      "complianceRate": "Tasso di Conformità",
+      "highRiskAlerts": "Allarmi Rischio Critico",
+      "pendingAudits": "Audit Art. 29 in Sospeso",
+      "tabOverview": "Panoramica e Analitiche",
+      "tabSubcontractors": "Subappaltatori e P.IVA",
+      "tabDocuments": "Documenti di Conformità",
+      "tabAudits": "Audit Responsabilità Solidale Art. 29",
+      "tabAlerts": "Allarmi Attivi"
     },
-    "types": {
-      "DURC": "DURC (Previdenziale)",
-      "VISURA_CAMERALE": "Visura Camerale",
-      "ISO_CERTIFICATION": "Certificazione ISO",
-      "SAFETY_PLAN": "Piano di Sicurezza (POS/DUVRI)",
-      "ID_DOCUMENT": "Documento d'Identità"
+    "intake": {
+      "title": "Esegui Ispezione di Conformità AI",
+      "subtitle": "Carica DURC, DURF o quietanza F24 per il rilevamento anomalie con Haiku 4.5",
+      "selectType": "Tipo di Documento",
+      "vatNumber": "Partita IVA / Codice Fiscale Subappaltatore",
+      "protocolNumber": "Numero Protocollo / Identificativo",
+      "dropzone": "Trascina e rilascia il documento di conformità (PDF / XML / P7M) o clicca per sfogliare",
+      "submitButton": "Esegui Audit di Conformità AI"
     },
     "status": {
-      "PENDING": "In Attesa di Revisione AI",
-      "VALID": "Valido",
-      "EXPIRED": "Scaduto",
-      "REJECTED": "Respinto"
+      "verified": "Verificato",
+      "underReview": "In Revisione",
+      "suspended": "Sospeso",
+      "blacklisted": "In Blacklist",
+      "valid": "Valido",
+      "expired": "Scaduto",
+      "irregular": "Irregolare",
+      "pending": "In Attesa",
+      "cleared": "Regolarizzato",
+      "breachDetected": "Violazione Rilevata",
+      "cautionaryWithholding": "Ritenuta Cautelativa"
     }
-  },
-  "Forms": {
-    "save": "Salva Record",
-    "cancel": "Annulla",
-    "success": "Record creato con successo.",
-    "subcontractor": {
-      "companyName": "Nome Azienda",
-      "vatNumber": "Partita IVA",
-      "legalRepresentative": "Legale Rappresentante",
-      "riskScore": "Punteggio di Rischio Iniziale (0-100)",
-      "status": "Stato di Conformità"
-    },
-    "contract": {
-      "code": "Codice Contratto",
-      "subcontractor": "ID Subappaltatore",
-      "jointLiability": "Clausola di Responsabilità Solidale Applicata",
-      "value": "Valore del Contratto (€)",
-      "startDate": "Data di Inizio",
-      "expirationDate": "Data di Scadenza"
-    },
-    "audit": {
-      "subcontractor": "Subappaltatore",
-      "documentType": "Tipo di Documento",
-      "issueDate": "Data di Emissione",
-      "expiryDate": "Data di Scadenza",
-      "fileUpload": "Carica Documento (PDF / Scansione)"
-    }
-  },
-  "ReportViewer": {
-    "title": "Rapporto di Audit AI Claude Haiku 4.5",
-    "summary": "Metadati Estratti e Valutazione di Conformità Legale",
-    "validityCheck": "Validità Normativa",
-    "riskAnalysis": "Fattori di Analisi del Rischio",
-    "close": "Chiudi Visualizzatore"
   }
 }

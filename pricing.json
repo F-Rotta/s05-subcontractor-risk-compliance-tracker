@@ -1,26 +1,26 @@
 [
   {
-    "name": "Audit Singolo",
-    "amount": 2900,
+    "name": "Subcontractor Risk Compliance Tracker – Single Pass",
+    "amount": 1900,
     "recurring": null,
-    "key_suffix": "SINGLE_PASS",
-    "credits": 5,
-    "rationale": "Ideal for law firms handling occasional subcontracting audits or urgent single-case compliance checks."
+    "key_suffix": "SINGLE",
+    "credits": 10,
+    "rationale": "Entry-level credit pack for solo practitioners or occasional audit checks. Lowers adoption friction with a sub-€20 psychological threshold, allowing law firms and notary offices to trial the platform with minimal commitment. Covers approximately 10 subcontractor compliance scans or deadline-monitoring runs."
   },
   {
-    "name": "Pacchetto Studio Legale",
-    "amount": 7900,
+    "name": "Subcontractor Risk Compliance Tracker – Standard Pass",
+    "amount": 4900,
     "recurring": null,
-    "key_suffix": "STANDARD_PASS",
-    "credits": 20,
-    "rationale": "Designed for boutique firms with a steady stream of supplier contracts and ongoing deadline monitoring needs."
+    "key_suffix": "STANDARD",
+    "credits": 30,
+    "rationale": "Core volume pack targeting small-to-mid-size legal studios managing multiple subcontracting relationships simultaneously. The €49 price point sits at a classic B2B impulse-buy threshold and delivers a per-credit cost of ~€1.63 vs €1.90 in the Single Pass, creating a visible value step-up. Covers approximately 30 compliance audit runs or mixed monitoring tasks."
   },
   {
-    "name": "Pacchetto Notarile & Enterprise",
-    "amount": 19900,
+    "name": "Subcontractor Risk Compliance Tracker – Power Pass",
+    "amount": 9900,
     "recurring": null,
-    "key_suffix": "POWER_PASS",
-    "credits": 60,
-    "rationale": "High-volume credit tier optimized for large notary offices and legal practices managing extensive contractor networks."
+    "key_suffix": "POWER",
+    "credits": 75,
+    "rationale": "High-volume pack for structured law firms, notary networks, or compliance departments handling large portfolios of subcontracting chains. At €99, the per-credit cost drops to ~€1.32, creating a strong economic incentive to anchor at this tier. The anchoring effect also makes the Standard Pass appear as a reasonable mid-ground, boosting blended ASP across the board."
   }
 ]
